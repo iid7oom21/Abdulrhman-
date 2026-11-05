@@ -1,0 +1,14 @@
+# Source: origin/gh-pages b8a659c (deployed site), extracted with git archive; read-only verification on 2026-11-04. Node 22.23.4, ffprobe/ffmpeg from the container, Playwright 1.63.0 Chromium.
+assets/audio/raven/01.mp3 | mp3,48000,2 mjpeg 272.400000,Raven: Return of the Shadows | decode_errors=0 | pcm=a8eed39d8e92c7bb
+assets/audio/raven/02.mp3 | mp3,48000,2 mjpeg 218.160000,Raven by Abdulrahman | decode_errors=0 | pcm=451508ec8b1697aa
+assets/audio/raven/03.mp3 | mp3,48000,2 mjpeg 208.032000,RAVEN — A Beautiful Alibi | decode_errors=0 | pcm=1199afb52ea18365
+assets/audio/raven/04.mp3 | mp3,48000,2 mjpeg 219.984000,RAVEN — Keep Me Guessing | decode_errors=0 | pcm=8814600425a8d2a2
+assets/audio/raven/05.mp3 | mp3,48000,2 mjpeg 202.392000,RAVEN — Keep Me Guessing | decode_errors=0 | pcm=f40ee305d4ac38ac
+assets/audio/raven/06.mp3 | mp3,48000,2 mjpeg 217.224000,Raven | decode_errors=0 | pcm=1fa31b4995804eb4
+assets/audio/raven/07.mp3 | mp3,48000,2 mjpeg 282.840000,Raven: Return of the Shadows | decode_errors=0 | pcm=dc5b2074eb84af69
+assets/audio/raven/08.mp3 | mp3,48000,2 mjpeg 212.424000,RAVEN — A Beautiful Alibi | decode_errors=0 | pcm=ff3c1d724451f581
+assets/audio/raven/09.mp3 | mp3,48000,2 mjpeg 218.040000,Raven by Abdulrahman | decode_errors=0 | pcm=3ec802734bc44d94
+assets/audio/raven/10.mp3 | mp3,48000,2 mjpeg 236.520000,"Raven, Keep Me Guessing" | decode_errors=0 | pcm=77ab3b809950d555
+assets/audio/raven/11.mp3 | mp3,48000,2 mjpeg 212.040000,Raven | decode_errors=0 | pcm=ebc2856425604f63
+assets/audio/raven/12.mp3 | mp3,48000,2 mjpeg 238.032000,"Raven, Keep Me Guessing" | decode_errors=0 | pcm=7e987255e9b57cf9
+assets/audio/raven/13.mp3 | mp3,48000,2 mjpeg 254.832000,RAVEN — Keep Me Guessing | decode_errors=0 | pcm=d721ef5afd2d9ee8

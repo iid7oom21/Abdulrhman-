@@ -1,0 +1,66 @@
+# Source: origin/gh-pages b8a659c (deployed site), extracted with git archive; read-only verification on 2026-11-04. Node 22.23.4, ffprobe/ffmpeg from the container, Playwright 1.63.0 Chromium.
+TAP version 13
+# Subtest: production soundtrack module with production controls
+    # Subtest: late error/ended/pause events after stop leave player paused
+    ok 1 - late error/ended/pause events after stop leave player paused
+      ---
+      duration_ms: 225.45297
+      type: 'test'
+      ...
+    # Subtest: queued pause/error/ended from previous source do not override new selection
+    ok 2 - queued pause/error/ended from previous source do not override new selection
+      ---
+      duration_ms: 194.917158
+      type: 'test'
+      ...
+    # Subtest: old play promise cannot override selection; pause and mute during pending play persist
+    ok 3 - old play promise cannot override selection; pause and mute during pending play persist
+      ---
+      duration_ms: 366.238101
+      type: 'test'
+      ...
+    # Subtest: stale rejection ignored; waiting/stalled do not advance; actual ended wraps last to first
+    ok 4 - stale rejection ignored; waiting/stalled do not advance; actual ended wraps last to first
+      ---
+      duration_ms: 290.996881
+      type: 'test'
+      ...
+    # Subtest: natural end while foreground media is active advances silently, then resumes next track
+    ok 5 - natural end while foreground media is active advances silently, then resumes next track
+      ---
+      duration_ms: 159.260629
+      type: 'test'
+      ...
+    # Subtest: last track wraps silently during suspension; explicit stop prevents resume
+    ok 6 - last track wraps silently during suspension; explicit stop prevents resume
+      ---
+      duration_ms: 283.506728
+      type: 'test'
+      ...
+    # Subtest: late pause with network error preserves explicit stop; active failure remains error
+    ok 7 - late pause with network error preserves explicit stop; active failure remains error
+      ---
+      duration_ms: 260.06895
+      type: 'test'
+      ...
+    # Subtest: singleton, one background audio, repeat factory preserves preferences
+    ok 8 - singleton, one background audio, repeat factory preserves preferences
+      ---
+      duration_ms: 149.679624
+      type: 'test'
+      ...
+    1..8
+ok 1 - production soundtrack module with production controls
+  ---
+  duration_ms: 2064.159208
+  type: 'test'
+  ...
+1..1
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2418.393465

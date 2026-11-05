@@ -1,0 +1,21 @@
+▶ real preview page browser acceptance
+  ✔ 1 initialization preserves unrelated storage and music preferences; 2 normal path and safe text (847.194252ms)
+  ✔ unreadable owned journal is preserved verbatim (581.752764ms)
+  ✔ 3 new browser session has no old history, and labels state the limits (503.617825ms)
+  ✔ 4 server error then poll stays error; 10 repeated reads do not duplicate (789.229755ms)
+  ✔ 5 history keeps pending; 6 second send blocked; 9 character switch; 11 stop retains ID (800.127075ms)
+  ✔ 7 known reply without save confirmation stays visible; no regeneration; 13 reply XSS is text (760.386081ms)
+  ✔ 7b local save throws after a known reply, reply stays in memory (533.525579ms)
+  ✔ 8 stale history after send; 9 late character history never changes selected conversation (669.924849ms)
+  ✔ late reply and late history for Jonas cannot overwrite Claire (884.968605ms)
+  ✔ reload keeps unresolved operation and draft; 202 empty is never completed (700.608827ms)
+  ✔ 320/375/390 RTL long text, focus and controls stay reachable (851.42325ms)
+✔ real preview page browser acceptance (8264.833184ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8698.771057

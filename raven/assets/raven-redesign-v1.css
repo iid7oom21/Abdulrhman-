@@ -1,0 +1,81 @@
+/* RAVEN homepage — redesign v1 (presentation only).
+   Loaded after raven-home-focus.css. It changes no DOM, no script, no copy,
+   no media URL and no image bytes. To revert, remove its <link> in raven/content.html. */
+
+:root{
+  --rvn-label:#cdb28a;          /* small gold labels: higher contrast than the old #b0956f */
+  --rvn-body-soft:#c3cad0;      /* body copy on dark panels */
+  --rvn-btn-h:48px;             /* one touch-target height for every primary action */
+  --rvn-section-y:clamp(56px,8.5vw,104px);
+}
+
+/* 1. Legibility floor. Arabic labels were 8–10px; nothing small is below 11px now. */
+.eyebrow,.status,.premiereEyebrow,.metaItem>span:first-child,.rvnStudioCard small,
+.rvnPressCopy small,.rvnSelectedRow>small,.rvnSelectedRow>span:first-child,
+.rvnNowPlaying small,.modalTitle>span,.premiereMeta,.rvnProductionLog small{
+  font-size:11px;
+  line-height:1.6;
+  color:var(--rvn-label);
+}
+.rvnStudioRail small{font-size:10px;color:var(--rvn-label)}
+.rvnStudioRail span{font-size:12px;color:#b5bcc1}
+.rvnSelectedRow p,.rvnSelectedRow div>span,.rvnSelectedRow div>small{font-size:14px;color:#b3bbc1}
+.rvnCaseEntry .rvnCaseMeta{font-size:13px;color:#c9b59a}
+
+/* 2. Rhythm. One vertical scale for every section; headings sit a little closer to their content. */
+section{padding-block:var(--rvn-section-y)}
+.sectionHead{margin-bottom:clamp(22px,3.6vw,40px)}
+.sectionHead p{color:var(--rvn-body-soft);font-size:15px;line-height:1.85}
+
+/* 3. Buttons: same height, clear edge, visible focus. The gold stays the single primary action. */
+.rvnHeroActions>*,.rvnEnterCase,.rvnSubmit,.rvnAfterActions button,.rvnAfterActions a{
+  min-height:var(--rvn-btn-h);
+}
+.rvnHeroActions>*{border-color:rgba(197,154,97,.5);color:#eee7dc}
+.rvnHeroWatch{background:var(--rvn-gold);border-color:var(--rvn-gold);color:#080a0b}
+.rvnEnterCase{letter-spacing:.01em}
+.rvnHeroActions>*:focus-visible,.rvnEnterCase:focus-visible,.rvnSubmit:focus-visible{outline-offset:4px}
+
+/* 4. Cards: a quiet elevation so frames read as objects, and a stronger hover edge. */
+.film.raven{border-color:rgba(197,154,97,.26);box-shadow:0 26px 60px -36px rgba(0,0,0,.95)}
+.film.raven:hover{border-color:rgba(197,154,97,.6)}
+.rvnSelectedRow{border-bottom-color:rgba(197,154,97,.2)}
+.rvnSelectedRow:hover{background:rgba(197,154,97,.05)}
+.rvnSelectedRow>span:last-child{transition:transform .2s ease}
+.rvnSelectedRow:hover>span:last-child{transform:translateX(-4px)}
+.rvnVaultGrid a{border:1px solid rgba(197,154,97,.14)}
+.rvnStudioCard{border-top-color:rgba(197,154,97,.3)}
+
+/* 5. Navigation: slightly more solid over the hero so the wordmark and links never float over video. */
+.ravenNav{background:rgba(7,9,11,.92);-webkit-backdrop-filter:saturate(1.2) blur(10px);backdrop-filter:saturate(1.2) blur(10px)}
+.ravenNavLinks a{font-size:13.5px}
+
+/* 6. Hero: the copy block gets a little more air; the media frame itself is untouched. */
+.refHeroCopy{padding-block:22px 28px}
+
+/* 7. Narrow screens: the baseline stays one column with 16px side gutters and no horizontal scroll. */
+@media(max-width:650px){
+  .wrap,.refHeroCopy,.rvnFold{width:min(calc(100% - 32px),var(--rvn-max))}
+  .sectionHead{padding-top:16px}
+  .rvnSelectedRow{grid-template-columns:auto minmax(0,1fr);gap:12px 14px;padding-inline:0}
+  .rvnSelectedRow>span:last-child{grid-column:2;justify-self:start}
+  .rvnHeroActions>*{font-size:15px}
+  .rvnStudioRailInner{padding-inline:0}
+}
+
+/* 8. Reduced motion: keep the new hover affordances static. */
+@media(prefers-reduced-motion:reduce){
+  .rvnSelectedRow>span:last-child,.rvnSelectedRow:hover>span:last-child{transition:none;transform:none}
+}
+
+/* 9. Arabic section labels follow the page direction, so they start where their heading starts
+   and keep the word order of mixed Arabic/Latin labels ("أعمال RAVEN الأصلية"). English stays LTR. */
+html[lang="ar"] .eyebrow{direction:rtl}
+
+/* 10. The contact call to action is a link: give it the same primary-button shape as "شاهد RAVEN 17". */
+.btn.primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:var(--rvn-btn-h);padding:10px 22px;
+  border:1px solid var(--rvn-gold);border-radius:2px;background:var(--rvn-gold);color:#080a0b;font-size:15px;font-weight:600;
+  line-height:1.5;text-decoration:none;transition:background .2s ease,border-color .2s ease}
+.btn.primary:focus-visible{outline:2px solid #dec9a9;outline-offset:4px}
+@media(hover:hover){.btn.primary:hover{background:#d5b17e;border-color:#d5b17e;color:#080a0b}}
+@media(prefers-reduced-motion:reduce){.btn.primary{transition:none}}

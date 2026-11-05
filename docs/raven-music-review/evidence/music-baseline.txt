@@ -1,0 +1,57 @@
+▶ production soundtrack module with production controls
+  ✖ late error/ended/pause events after stop leave player paused (674.238933ms)
+  ✖ queued pause/error/ended from previous source do not override new selection (605.327261ms)
+  ✔ old play promise cannot override selection; pause and mute during pending play persist (663.452936ms)
+  ✔ stale rejection ignored; waiting/stalled do not advance; actual ended wraps last to first (595.893567ms)
+  ✔ singleton, one background audio, repeat factory preserves preferences (443.48182ms)
+✖ production soundtrack module with production controls (3288.229549ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 3
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3684.55774
+
+✖ failing tests:
+
+test at tests/music-races.cjs:43:11
+✖ late error/ended/pause events after stop leave player paused (674.238933ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'error' !== 'paused'
+
+      at /workspace/work/raven-music/tests/music-races.cjs:49:12
+      at async check (/workspace/work/raven-music/tests/music-races.cjs:38:7)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (/workspace/work/raven-music/tests/music-races.cjs:43:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'error',
+    expected: 'paused',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/music-races.cjs:56:11
+✖ queued pause/error/ended from previous source do not override new selection (605.327261ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at /workspace/work/raven-music/tests/music-races.cjs:60:12
+      at async check (/workspace/work/raven-music/tests/music-races.cjs:38:7)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async TestContext.<anonymous> (/workspace/work/raven-music/tests/music-races.cjs:56:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

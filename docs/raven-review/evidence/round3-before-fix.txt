@@ -1,0 +1,250 @@
+TAP version 13
+# Subtest: real preview page browser acceptance
+    # Subtest: 1 initialization preserves unrelated storage and music preferences; 2 normal path and safe text
+    ok 1 - 1 initialization preserves unrelated storage and music preferences; 2 normal path and safe text
+      ---
+      duration_ms: 429.319191
+      type: 'test'
+      ...
+    # Subtest: unreadable owned journal is preserved verbatim
+    ok 2 - unreadable owned journal is preserved verbatim
+      ---
+      duration_ms: 235.114832
+      type: 'test'
+      ...
+    # Subtest: prior preview journal with refused metadata restores its response and draft
+    ok 3 - prior preview journal with refused metadata restores its response and draft
+      ---
+      duration_ms: 163.287546
+      type: 'test'
+      ...
+    # Subtest: valid JSON with incompatible fields or records is never overwritten on initialization
+    ok 4 - valid JSON with incompatible fields or records is never overwritten on initialization
+      ---
+      duration_ms: 537.783627
+      type: 'test'
+      ...
+    # Subtest: conflicting late history cannot replace an already received reply for the same ID
+    ok 5 - conflicting late history cannot replace an already received reply for the same ID
+      ---
+      duration_ms: 289.231887
+      type: 'test'
+      ...
+    # Subtest: 3 new browser session has no old history, and labels state the limits
+    ok 6 - 3 new browser session has no old history, and labels state the limits
+      ---
+      duration_ms: 164.372727
+      type: 'test'
+      ...
+    # Subtest: 4 server error then poll stays error; 10 repeated reads do not duplicate
+    ok 7 - 4 server error then poll stays error; 10 repeated reads do not duplicate
+      ---
+      duration_ms: 399.12655
+      type: 'test'
+      ...
+    # Subtest: 5 history keeps pending; 6 second send blocked; 9 character switch; 11 stop retains ID
+    ok 8 - 5 history keeps pending; 6 second send blocked; 9 character switch; 11 stop retains ID
+      ---
+      duration_ms: 497.623926
+      type: 'test'
+      ...
+    # Subtest: 7 known reply without save confirmation stays visible; no regeneration; 13 reply XSS is text
+    ok 9 - 7 known reply without save confirmation stays visible; no regeneration; 13 reply XSS is text
+      ---
+      duration_ms: 364.496601
+      type: 'test'
+      ...
+    # Subtest: 7b local save throws after a known reply, reply stays in memory
+    ok 10 - 7b local save throws after a known reply, reply stays in memory
+      ---
+      duration_ms: 238.827977
+      type: 'test'
+      ...
+    # Subtest: 8 stale history after send; 9 late character history never changes selected conversation
+    ok 11 - 8 stale history after send; 9 late character history never changes selected conversation
+      ---
+      duration_ms: 319.847334
+      type: 'test'
+      ...
+    # Subtest: late reply and late history for Jonas cannot overwrite Claire
+    ok 12 - late reply and late history for Jonas cannot overwrite Claire
+      ---
+      duration_ms: 530.20276
+      type: 'test'
+      ...
+    # Subtest: reload keeps unresolved operation and draft; 202 empty is never completed
+    ok 13 - reload keeps unresolved operation and draft; 202 empty is never completed
+      ---
+      duration_ms: 265.487339
+      type: 'test'
+      ...
+    # Subtest: lost session: a read-only 404 follow-up releases the character without resending or inventing a result
+    not ok 14 - lost session: a read-only 404 follow-up releases the character without resending or inventing a result
+      ---
+      duration_ms: 30241.275797
+      type: 'test'
+      location: '/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:175:11'
+      failureType: 'testCodeFailure'
+      error: |-
+        locator.waitFor: Timeout 30000ms exceeded.
+        Call log:
+          - waiting for locator('#status').filter({ hasText: 'لا يعرف العملية d8df82fe-2100-4f4d-b6d6-f15a1cd71b90' }) to be visible
+        
+      code: 'ERR_TEST_FAILURE'
+      name: 'TimeoutError'
+      stack: |-
+        /tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:188:80
+        async pageFor (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:18:11)
+        async TestContext.<anonymous> (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:175:3)
+      ...
+    # Subtest: known reply for an operation the server no longer has stays visible and is not regenerated
+    not ok 15 - known reply for an operation the server no longer has stays visible and is not regenerated
+      ---
+      duration_ms: 30282.529052
+      type: 'test'
+      location: '/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:204:11'
+      failureType: 'testCodeFailure'
+      error: |-
+        locator.waitFor: Timeout 30000ms exceeded.
+        Call log:
+          - waiting for locator('#status').filter({ hasText: 'لا يعرف العملية' }) to be visible
+        
+      code: 'ERR_TEST_FAILURE'
+      name: 'TimeoutError'
+      stack: |-
+        /tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:212:71
+        async pageFor (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:18:11)
+        async TestContext.<anonymous> (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:204:3)
+      ...
+    # Subtest: stopping the wait says the browser stopped waiting, not that reading failed or the server cancelled
+    not ok 16 - stopping the wait says the browser stopped waiting, not that reading failed or the server cancelled
+      ---
+      duration_ms: 268.348337
+      type: 'test'
+      location: '/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:217:11'
+      failureType: 'testCodeFailure'
+      error: |-
+        The input did not match the regular expression /أوقفنا انتظار المتصفح فقط/. Input:
+        
+        'تعذرت قراءة الحالة. احتفظنا بالعملية؛ يمكن متابعة المعرف الأصلي دون إعادة توليد.'
+        
+      code: 'ERR_ASSERTION'
+      name: 'AssertionError'
+      expected:
+      actual: 'تعذرت قراءة الحالة. احتفظنا بالعملية؛ يمكن متابعة المعرف الأصلي دون إعادة توليد.'
+      operator: 'match'
+      stack: |-
+        /tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:225:12
+        async pageFor (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:18:11)
+        async Test.run (node:internal/test_runner/test:1054:7)
+        async TestContext.<anonymous> (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:217:3)
+        async Test.run (node:internal/test_runner/test:1054:7)
+        async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+      ...
+    # Subtest: browser timeout is reported as a timeout that proves neither failure nor cancellation
+    not ok 17 - browser timeout is reported as a timeout that proves neither failure nor cancellation
+      ---
+      duration_ms: 30241.79188
+      type: 'test'
+      location: '/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:229:11'
+      failureType: 'testCodeFailure'
+      error: |-
+        locator.waitFor: Timeout 30000ms exceeded.
+        Call log:
+          - waiting for locator('#status').filter({ hasText: 'انتهت مهلة انتظار المتصفح' }) to be visible
+        
+      code: 'ERR_TEST_FAILURE'
+      name: 'TimeoutError'
+      stack: |-
+        /tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:236:81
+        async pageFor (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:18:11)
+        async TestContext.<anonymous> (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:229:3)
+      ...
+    # Subtest: expired session cookie: the page says to reload; after reload the follow-up releases the question
+    not ok 18 - expired session cookie: the page says to reload; after reload the follow-up releases the question
+      ---
+      duration_ms: 30268.129897
+      type: 'test'
+      location: '/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:241:11'
+      failureType: 'testCodeFailure'
+      error: |-
+        locator.waitFor: Timeout 30000ms exceeded.
+        Call log:
+          - waiting for locator('#status').filter({ hasText: 'أعد تحميل الصفحة' }) to be visible
+        
+      code: 'ERR_TEST_FAILURE'
+      name: 'TimeoutError'
+      stack: |-
+        /tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:247:72
+        async pageFor (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:18:11)
+        async TestContext.<anonymous> (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:241:3)
+      ...
+    # Subtest: 320/375/390 RTL long text, focus and controls stay reachable
+    ok 19 - 320/375/390 RTL long text, focus and controls stay reachable
+      ---
+      duration_ms: 490.726718
+      type: 'test'
+      ...
+    1..19
+not ok 1 - real preview page browser acceptance
+  ---
+  duration_ms: 126404.038127
+  type: 'test'
+  location: '/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/browser.cjs:7:1'
+  failureType: 'subtestsFailed'
+  error: '5 subtests failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: materials UI uses the real server and recipient contexts
+not ok 2 - materials UI uses the real server and recipient contexts
+  ---
+  duration_ms: 565.374646
+  type: 'test'
+  location: '/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/materials-browser.cjs:2:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /تأكد تسجيل الإجراء في ذاكرة الخادم/. Input:
+    
+    'المواد المسجلة في ذاكرة الخادم؛ ليست حفظًا دائمًا.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'المواد المسجلة في ذاكرة الخادم؛ ليست حفظًا دائمًا.'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/materials-browser.cjs:20:9)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: a material action lost with the session can be resent with the same ID, without duplicates
+not ok 3 - a material action lost with the session can be resent with the same ID, without duplicates
+  ---
+  duration_ms: 333.784492
+  type: 'test'
+  location: '/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/materials-browser.cjs:66:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/tmp/claude-0/-home-user-abdulrhman/8fa46d74-738b-5757-a16f-f98bad3b38c1/scratchpad/baseline-ai-dialogue/tests/materials-browser.cjs:84:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..3
+# tests 22
+# suites 0
+# pass 14
+# fail 8
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 126773.202644

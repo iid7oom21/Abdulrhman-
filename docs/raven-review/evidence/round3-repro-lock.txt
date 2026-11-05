@@ -1,0 +1,21 @@
+### before fix (PR #76 head 0879d26)
+{
+  "dialogue_sendDisabledAfterLoad": true,
+  "dialogue_statusAfterCheck": "لم تتأكد الحالة (404). احتفظنا بالمعرف والرد إن وجد. المتابعة لا تولد ردًا جديدًا.",
+  "dialogue_sendDisabledAfterCheck": true,
+  "dialogue_sendDisabledAfterReload": true,
+  "materials_saveDisabled": true,
+  "materials_status": "الإجراء غير مؤكد؛ احتفظنا بمعرفه ومحتواه. لم نُعد إرساله.",
+  "materials_saveDisabledAfterCheck": true
+}
+
+### after fix (working tree)
+{
+  "dialogue_sendDisabledAfterLoad": true,
+  "dialogue_statusAfterCheck": "الخادم لا يعرف العملية ⁨a1b2c3d4-0000-4000-8000-000000000001⁩ في جلستك الحالية؛ ربما أُعيد تشغيله أو انتهت جلسة المتصفح. لم نغير نتيجتها المعروفة ولم نُعد إرسالها. يمكنك إرسال سؤال جديد.",
+  "dialogue_sendDisabledAfterCheck": false,
+  "dialogue_sendDisabledAfterReload": false,
+  "materials_saveDisabled": true,
+  "materials_status": "الإجراء غير مؤكد؛ احتفظنا بمعرفه ومحتواه. لم نُعد إرساله. إن لم يظهر بعد إعادة تشغيل الخادم أو انتهاء الجلسة، يمكنك إعادة إرساله بالمعرف نفسه؛ الخادم لا يكرر إجراءً سُجل بهذا المعرف.",
+  "materials_saveDisabledAfterCheck": true
+}

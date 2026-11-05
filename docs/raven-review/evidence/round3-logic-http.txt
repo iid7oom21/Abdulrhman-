@@ -1,0 +1,134 @@
+
+> raven-ai-dialogue-preview@0.1.0 test
+> node --test tests/*.test.js
+
+TAP version 13
+# Subtest: same operation replays, a different payload conflicts even when its prefix matches
+ok 1 - same operation replays, a different payload conflicts even when its prefix matches
+  ---
+  duration_ms: 4.427497
+  type: 'test'
+  ...
+# Subtest: owner required, read/poll never generates and cannot cross owners
+ok 2 - owner required, read/poll never generates and cannot cross owners
+  ---
+  duration_ms: 0.359046
+  type: 'test'
+  ...
+# Subtest: no recovered transcript means no invented presence or testimony
+ok 3 - no recovered transcript means no invented presence or testimony
+  ---
+  duration_ms: 0.995005
+  type: 'test'
+  ...
+# Subtest: client facts/corrections/motives/report cannot grant character knowledge
+ok 4 - client facts/corrections/motives/report cannot grant character knowledge
+  ---
+  duration_ms: 0.28118
+  type: 'test'
+  ...
+# Subtest: unknown character/types are validation errors
+ok 5 - unknown character/types are validation errors
+  ---
+  duration_ms: 0.138839
+  type: 'test'
+  ...
+# Subtest: real session routes share only explicit materials and build dialogue from recipient knowledge
+ok 6 - real session routes share only explicit materials and build dialogue from recipient knowledge
+  ---
+  duration_ms: 106.167283
+  type: 'test'
+  ...
+# Subtest: private correction reaches only its explicit recipient and original statement remains intact
+ok 7 - private correction reaches only its explicit recipient and original statement remains intact
+  ---
+  duration_ms: 2.421501
+  type: 'test'
+  ...
+# Subtest: sharing correction does not share motive, private note, previous conversation or unseen original
+ok 8 - sharing correction does not share motive, private note, previous conversation or unseen original
+  ---
+  duration_ms: 0.608987
+  type: 'test'
+  ...
+# Subtest: report shares its explicit attachments only; receipt alone never shares report
+ok 9 - report shares its explicit attachments only; receipt alone never shares report
+  ---
+  duration_ms: 0.638889
+  type: 'test'
+  ...
+# Subtest: delivery to Matteo does not tell Jonas; forwarded material exposes no transport sender/recipient list
+ok 10 - delivery to Matteo does not tell Jonas; forwarded material exposes no transport sender/recipient list
+  ---
+  duration_ms: 0.851644
+  type: 'test'
+  ...
+# Subtest: older correction delivered later never overrides newer known correction; silence does not remove either
+ok 11 - older correction delivered later never overrides newer known correction; silence does not remove either
+  ---
+  duration_ms: 0.334823
+  type: 'test'
+  ...
+# Subtest: evidence derivatives share a source group without leaking an unseen private source ID
+ok 12 - evidence derivatives share a source group without leaking an unseen private source ID
+  ---
+  duration_ms: 0.551915
+  type: 'test'
+  ...
+# Subtest: report attachments do not expand nested report links or correction originals
+ok 13 - report attachments do not expand nested report links or correction originals
+  ---
+  duration_ms: 2.90123
+  type: 'test'
+  ...
+# Subtest: stable IDs replay exactly, conflict on changed payload, and forbid duplicate recipients or attachments
+ok 14 - stable IDs replay exactly, conflict on changed payload, and forbid duplicate recipients or attachments
+  ---
+  duration_ms: 0.291422
+  type: 'test'
+  ...
+# Subtest: immutable records reject unknown fields, unknown actors, foreign corrections and unauthorized forwarding atomically
+ok 15 - immutable records reject unknown fields, unknown actors, foreign corrections and unauthorized forwarding atomically
+  ---
+  duration_ms: 1.192693
+  type: 'test'
+  ...
+# Subtest: each factory is a separate session and commands embedded in text do not change game state
+ok 16 - each factory is a separate session and commands embedded in text do not change game state
+  ---
+  duration_ms: 0.43205
+  type: 'test'
+  ...
+# Subtest: player-visible view does not leak private NPC text or an unseen newer correction
+ok 17 - player-visible view does not leak private NPC text or an unseen newer correction
+  ---
+  duration_ms: 0.235408
+  type: 'test'
+  ...
+# Subtest: HTTP sessions, concurrent idempotency, validation, private history and read-only polling
+ok 18 - HTTP sessions, concurrent idempotency, validation, private history and read-only polling
+  ---
+  duration_ms: 80.49242
+  type: 'test'
+  ...
+# Subtest: chunked HTTP preserves Unicode across a split UTF-8 character and replays the same operation
+ok 19 - chunked HTTP preserves Unicode across a split UTF-8 character and replays the same operation
+  ---
+  duration_ms: 116.375521
+  type: 'test'
+  ...
+# Subtest: request-id contract cases run against the real server: replay, conflicts, key order, race, unknown poll
+ok 20 - request-id contract cases run against the real server: replay, conflicts, key order, race, unknown poll
+  ---
+  duration_ms: 28.309528
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 399.330558

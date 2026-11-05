@@ -1,0 +1,15 @@
+▶ production soundtrack module with production controls
+  ✔ late error/ended/pause events after stop leave player paused (672.272538ms)
+  ✔ queued pause/error/ended from previous source do not override new selection (570.531307ms)
+  ✔ old play promise cannot override selection; pause and mute during pending play persist (727.050196ms)
+  ✔ stale rejection ignored; waiting/stalled do not advance; actual ended wraps last to first (649.349891ms)
+  ✔ singleton, one background audio, repeat factory preserves preferences (464.625444ms)
+✔ production soundtrack module with production controls (3390.098557ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3747.438152

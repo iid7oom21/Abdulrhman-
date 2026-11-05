@@ -1,0 +1,484 @@
+[
+  {
+    "path": "assets/raven-home-share.jpg",
+    "bytes": 414029,
+    "sha256": "bd4f79aa8cc65d6828b1f4310a1b66c9bd7d639a7c43bce8005dfdb7f47a1547"
+  },
+  {
+    "path": "fourth-signature/favicon.svg",
+    "bytes": 324,
+    "sha256": "b780ec46bac0d084e29cf751ac38b5cdaf31fe96fb9d60133f5fc3133b8ce171"
+  },
+  {
+    "path": "assets/intro/raven-intro.jpg",
+    "bytes": 120427,
+    "sha256": "4b54c40b0e0a13daee2f4f6def71e88ffb640122ecded31f63c188dac68743a5"
+  },
+  {
+    "path": "assets/audio/raven/11.mp3",
+    "bytes": 4901835,
+    "sha256": "f54fc1a0c5a1f6da3982eb05bf7cf93b2aeab1e5a688cef94ebdd5465b8a16fa",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "183607"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "212.040000",
+        "tags": {
+          "title": "Raven"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=ebc2856425604f63bc11fb9978996006e95a6e6877fe571d1eda51a2f75929df",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/13.mp3",
+    "bytes": 5453841,
+    "sha256": "334a1b1ea8c9346130a12b8a17fdd44b0fbacf09faa78ebd47dd49ba1edf5356",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "170384"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "254.832000",
+        "tags": {
+          "title": "RAVEN — Keep Me Guessing"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=d721ef5afd2d9ee87d8e460d9b00de56462d7ce06a04133bb845d773e1cf0139",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/09.mp3",
+    "bytes": 4931068,
+    "sha256": "ab575ada3d6b0b5a83074a027eee780ee00b25f6fe09edfa66d1310384cbc9b5",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "179829"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "218.040000",
+        "tags": {
+          "title": "Raven by Abdulrahman"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=3ec802734bc44d943dcd84a59783ec862f3d360a142c733fb4e953d835fc463d",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/01.mp3",
+    "bytes": 6331305,
+    "sha256": "f5a6a5d406d50853c8fe7789516e41e01b6c168fdb56785554f04af4e5f3bbed",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "185102"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "272.400000",
+        "tags": {
+          "title": "Raven: Return of the Shadows"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=a8eed39d8e92c7bb29107cd930ef4c6a899f1cf465330a26784a74ca4cd68a7a",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/06.mp3",
+    "bytes": 4863398,
+    "sha256": "1451c295b1a833aad204d35ab482b43048786925b4d5376899b1db4e0526e97f",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "177791"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "217.224000",
+        "tags": {
+          "title": "Raven"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=1fa31b4995804eb4242f4eb719f4839b97041a2b758a56a4d9ac899e40edbab7",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/12.mp3",
+    "bytes": 5416661,
+    "sha256": "b2355b5373c212d1b69d952a6874fbfab530efeec768e94b36d197e9c6268d82",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "181267"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "238.032000",
+        "tags": {
+          "title": "Raven, Keep Me Guessing"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=7e987255e9b57cf9a67388591edb62a6c20ed0200e65c95797511e6242e32275",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/03.mp3",
+    "bytes": 4468470,
+    "sha256": "e8642624211e4d68a00984e4cb23d33a0928bc4cb701994104c31edcd84bfe9b",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "170376"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "208.032000",
+        "tags": {
+          "title": "RAVEN — A Beautiful Alibi"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=1199afb52ea183654a73bbf85e03b1168ad33342e76365dc60f1161ad835d64b",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/05.mp3",
+    "bytes": 4675386,
+    "sha256": "8a25ebf594b9913a5bda89b418742ff8c7b8bfe8a4d288078023c681691e6006",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "183809"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "202.392000",
+        "tags": {
+          "title": "RAVEN — Keep Me Guessing"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=f40ee305d4ac38acb95a01a62443b68ddb739c128c921c0865a0968281c10506",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/08.mp3",
+    "bytes": 4619479,
+    "sha256": "869603052cfe9cdaac8cd1d6cac02c7a663a906acd5e04294d21e979e4b56035",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "172258"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "212.424000",
+        "tags": {
+          "title": "RAVEN — A Beautiful Alibi"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=ff3c1d724451f581aeecd8eb4c3ef28b6ae821631d6f9e120083d51593d4846a",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/10.mp3",
+    "bytes": 5353084,
+    "sha256": "dbddba6373db820315d45c336822e31212be602aeb7c28ac75eddc72aecff1da",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "180247"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "236.520000",
+        "tags": {
+          "title": "Raven, Keep Me Guessing"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=77ab3b809950d555367834e548bbf169ca9d7569bf9d7c66dbe4c670e1ae8c62",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/07.mp3",
+    "bytes": 6548730,
+    "sha256": "1168d1462e2743e3e799a1c011444b4265b431d2c7b12d886f0c0376556190f4",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "184425"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "282.840000",
+        "tags": {
+          "title": "Raven: Return of the Shadows"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=dc5b2074eb84af6906d0491f0f6f9a73a12667b734cfdaa75817a4a7bf5b0d90",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/04.mp3",
+    "bytes": 5196820,
+    "sha256": "31b556bd99c97fb06c17312dc5a91ef142130813231ebceb1d1b1118dc273ecb",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "188177"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "219.984000",
+        "tags": {
+          "title": "RAVEN — Keep Me Guessing"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=8814600425a8d2a24c0698b3959c8a56dad078352cd53bf038352f6bef6b233c",
+    "decode_exit": 0
+  },
+  {
+    "path": "assets/audio/raven/02.mp3",
+    "bytes": 4971850,
+    "sha256": "00ee3b00d2c618be93890be61ad4d527a7a2d5ec9e52a0f2e2b8778413ae3eb1",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "181279"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "218.160000",
+        "tags": {
+          "title": "Raven by Abdulrahman"
+        }
+      }
+    },
+    "decoded_audio_sha256": "SHA256=451508ec8b1697aab138e2bbabf41f930ce30fcb8a68b4fa1cb3d1fe10b35682",
+    "decode_exit": 0
+  },
+  {
+    "path": "fourth-signature/assets/audio/raven-baqi-athar-320.mp3",
+    "bytes": 7383579,
+    "sha256": "0d0c017891e418684667f5c9242e1d53e1a5acbf4fa69ad186b143feb88f9f2f",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "320000"
+        }
+      ],
+      "format": {
+        "duration": "184.560000",
+        "tags": {}
+      }
+    }
+  },
+  {
+    "path": "fourth-signature/assets/audio/raven-dark-pop-intimate-revised.mp3",
+    "bytes": 3571437,
+    "sha256": "05cc47916015d015d080bc48d354d10fa8189cff817101d96a91da039700325e",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "48000",
+          "channels": 2,
+          "bit_rate": "128000"
+        },
+        {
+          "codec_name": "mjpeg"
+        }
+      ],
+      "format": {
+        "duration": "176.208000",
+        "tags": {
+          "title": "RAVEN (Dark Pop Intimate - Revised)"
+        }
+      }
+    }
+  },
+  {
+    "path": "fourth-signature/assets/audio/raven-baqi-athar.mp3",
+    "bytes": 2953935,
+    "sha256": "b88c47de596d03c6eaa2f21c3d7eef7dd6580f981b9ec3df18df06ef654ddd0d",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "44100",
+          "channels": 2,
+          "bit_rate": "128000"
+        }
+      ],
+      "format": {
+        "duration": "184.581224",
+        "tags": {}
+      }
+    }
+  },
+  {
+    "path": "raven/terminal-preview/favicon.svg",
+    "bytes": 189,
+    "sha256": "66375cab3f0a527d5cca4789499842185561d24dfdb5136eff813ed9344f4819"
+  },
+  {
+    "path": "raven/terminal-preview/assets/episode-3.jpg",
+    "bytes": 19097,
+    "sha256": "700df2aa92256ce912bad2b604cc9b2c9b0fc277bbf1a7225a10c8bc911ea830"
+  },
+  {
+    "path": "raven/terminal-preview/assets/zarqa-poster.jpg",
+    "bytes": 118914,
+    "sha256": "16cad556330d2668937d60d8e58c13cd58034b669063a8b9d2f3758998b6d620"
+  },
+  {
+    "path": "raven/terminal-preview/assets/episode-1.jpg",
+    "bytes": 46986,
+    "sha256": "2cba18dca7f8191e33b942ee48b1efcc9dfee6961a4fb01b878f5ac2aae25fed"
+  },
+  {
+    "path": "raven/terminal-preview/assets/hero-poster.jpg",
+    "bytes": 89582,
+    "sha256": "8470eab08bec6cd3d4a7dabb9575412a6146445d5adadf1588d9691eb9922e8b"
+  },
+  {
+    "path": "raven/terminal-preview/assets/raven-intro-poster.jpg",
+    "bytes": 204143,
+    "sha256": "54511f8eedff55b8419c797f1348f9361bc07c6c011b46f2938ede3b92e213ca"
+  },
+  {
+    "path": "raven/terminal-preview/assets/episode-2.jpg",
+    "bytes": 72610,
+    "sha256": "f84a8e33be951c347fc1d20dbc8d9f10c396c9bad12b12efce32a78bc420b50b"
+  }
+]

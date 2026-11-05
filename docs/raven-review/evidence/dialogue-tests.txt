@@ -1,0 +1,18 @@
+
+> raven-ai-dialogue-preview@0.1.0 test
+> node --test tests/*.test.js
+
+✔ same operation replays, a different payload conflicts even when its prefix matches (1.760617ms)
+✔ owner required, read/poll never generates and cannot cross owners (0.258286ms)
+✔ no recovered transcript means no invented presence or testimony (0.954063ms)
+✔ client facts/corrections/motives/report cannot grant character knowledge (0.30277ms)
+✔ unknown character/types are validation errors (0.166454ms)
+✔ HTTP sessions, concurrent idempotency, validation, private history and read-only polling (81.773473ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 239.256991

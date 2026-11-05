@@ -1,0 +1,13 @@
+Actual browser MP3 playback: {
+  src: 'http://127.0.0.1:10002/assets/audio/raven/01.mp3',
+  time: 0.121044,
+  ready: 4,
+  error: null,
+  paused: false
+}
+Actual in-app language/hash navigation preserved the same background audio and playback time: { timeBefore: 0.615147, timeAfter: 0.74851 }
+Actual pause confirmed; one background audio: 1
+Player controls within viewport: 320
+Player controls within viewport: 375
+Player controls within viewport: 390
+No uncaught page errors. Headless Chromium is not a listening or iPhone device test.

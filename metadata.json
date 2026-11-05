@@ -1,0 +1,8 @@
+{
+  "name": "RAVEN — قصص سينمائية أصلية",
+  "description": "RAVEN مشروع سينمائي مستقل لعبدالرحمن العتيبي. يضم صفحة المشروع الرئيسية، مشغل الموسيقى المدمج المضاد لسباقات التزامن، ومعاينة الحوار التفاعلي.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

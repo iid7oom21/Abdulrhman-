@@ -1,0 +1,18 @@
+▶ production soundtrack module with production controls
+  ✔ late error/ended/pause events after stop leave player paused (1000.396212ms)
+  ✔ queued pause/error/ended from previous source do not override new selection (1086.648655ms)
+  ✔ old play promise cannot override selection; pause and mute during pending play persist (1681.134094ms)
+  ✔ stale rejection ignored; waiting/stalled do not advance; actual ended wraps last to first (1332.022212ms)
+  ✔ natural end while foreground media is active advances silently, then resumes next track (1077.151885ms)
+  ✔ last track wraps silently during suspension; explicit stop prevents resume (1479.527497ms)
+  ✔ late pause with network error preserves explicit stop; active failure remains error (1244.206483ms)
+  ✔ singleton, one background audio, repeat factory preserves preferences (658.501614ms)
+✔ production soundtrack module with production controls (10144.972024ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10644.585604

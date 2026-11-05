@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://iid7oom21.github.io/abdulrhman/raven/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://iid7oom21.github.io/abdulrhman/raven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iid7oom21.github.io/abdulrhman/raven/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iid7oom21.github.io/abdulrhman/raven/"/>
+  </url>
+  <url>
+    <loc>https://iid7oom21.github.io/abdulrhman/raven/?lang=en</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://iid7oom21.github.io/abdulrhman/raven/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iid7oom21.github.io/abdulrhman/raven/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://iid7oom21.github.io/abdulrhman/raven/"/>
+  </url>
+</urlset>

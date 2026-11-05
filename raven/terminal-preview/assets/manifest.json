@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "original": "https://d2ol7oe51mr4n9.cloudfront.net/user_3INeyBf4CwM9xzf5JJ2W1rZmtIj/660cc576-bfb2-4a9a-b875-3c072800250c.mp4",
+    "clipStartSeconds": 2,
+    "durationSeconds": 7,
+    "width": 896,
+    "height": 504,
+    "fps": 24,
+    "audio": false
+  },
+  "posters": {
+    "hero-poster.jpg": "Approved existing homepage poster, unchanged",
+    "episode-1.jpg": "Episode 1 at 3 seconds",
+    "episode-2.jpg": "Episode 2 at 12 seconds",
+    "episode-3.jpg": "Episode 3 at 18 seconds",
+    "zarqa-poster.jpg": "Existing official teaser at 0 seconds"
+  },
+  "fonts": {
+    "ibm-plex-arabic.woff2": {
+      "family": "IBM Plex Sans Arabic",
+      "weight": 400,
+      "subset": "arabic",
+      "license": "OFL-IBM-Plex.txt"
+    },
+    "cinzel.woff2": {
+      "family": "Cinzel",
+      "weight": "400–700",
+      "subset": "latin",
+      "license": "OFL-Cinzel.txt"
+    }
+  },
+  "files": [
+    {
+      "file": "OFL-Cinzel.txt",
+      "bytes": 4382,
+      "sha256": "f5a242cf68ad6ebd0603b3359a74c593ca080318a681035be5296ba2c6b04ae6"
+    },
+    {
+      "file": "OFL-IBM-Plex.txt",
+      "bytes": 4362,
+      "sha256": "d741e57d5f865e294df801f96b7b5161a88b211df65887e4358d271c9fc5fb4f"
+    },
+    {
+      "file": "cinzel.woff2",
+      "bytes": 25904,
+      "sha256": "09941fb1c169c38fd414536b37690057fc01b3117a5c63dd6571186540c8f370"
+    },
+    {
+      "file": "episode-1.jpg",
+      "bytes": 46986,
+      "sha256": "2cba18dca7f8191e33b942ee48b1efcc9dfee6961a4fb01b878f5ac2aae25fed",
+      "width": 600,
+      "height": 1097
+    },
+    {
+      "file": "episode-2.jpg",
+      "bytes": 72610,
+      "sha256": "f84a8e33be951c347fc1d20dbc8d9f10c396c9bad12b12efce32a78bc420b50b",
+      "width": 450,
+      "height": 994
+    },
+    {
+      "file": "episode-3.jpg",
+      "bytes": 19097,
+      "sha256": "700df2aa92256ce912bad2b604cc9b2c9b0fc277bbf1a7225a10c8bc911ea830",
+      "width": 450,
+      "height": 822
+    },
+    {
+      "file": "hero-loop.mp4",
+      "bytes": 581372,
+      "sha256": "c811a174321fcb12f94cbd43c50a6a74ca659adc16aaef608c0df477c65a9c61"
+    },
+    {
+      "file": "hero-poster.jpg",
+      "bytes": 89582,
+      "sha256": "8470eab08bec6cd3d4a7dabb9575412a6146445d5adadf1588d9691eb9922e8b",
+      "width": 910,
+      "height": 512
+    },
+    {
+      "file": "ibm-plex-arabic.woff2",
+      "bytes": 42848,
+      "sha256": "6010e7fd0dce5d527583951750728cbe3c895efbd16aa0f809ab8c824878c9d8"
+    },
+    {
+      "file": "zarqa-poster.jpg",
+      "bytes": 118914,
+      "sha256": "16cad556330d2668937d60d8e58c13cd58034b669063a8b9d2f3758998b6d620",
+      "width": 600,
+      "height": 1066
+    }
+  ],
+  "initialHeroAndFontsBytes": 739706
+}

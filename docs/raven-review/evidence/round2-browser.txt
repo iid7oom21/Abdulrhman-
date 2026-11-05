@@ -1,0 +1,25 @@
+▶ real preview page browser acceptance
+  ✔ 1 initialization preserves unrelated storage and music preferences; 2 normal path and safe text (813.713532ms)
+  ✔ unreadable owned journal is preserved verbatim (586.616484ms)
+  ✔ prior preview journal with refused metadata restores its response and draft (528.992026ms)
+  ✔ valid JSON with incompatible fields or records is never overwritten on initialization (2159.352193ms)
+  ✔ conflicting late history cannot replace an already received reply for the same ID (660.949203ms)
+  ✔ 3 new browser session has no old history, and labels state the limits (522.654562ms)
+  ✔ 4 server error then poll stays error; 10 repeated reads do not duplicate (849.064494ms)
+  ✔ 5 history keeps pending; 6 second send blocked; 9 character switch; 11 stop retains ID (1168.863035ms)
+  ✔ 7 known reply without save confirmation stays visible; no regeneration; 13 reply XSS is text (797.027799ms)
+  ✔ 7b local save throws after a known reply, reply stays in memory (559.879058ms)
+  ✔ 8 stale history after send; 9 late character history never changes selected conversation (757.062577ms)
+  ✔ late reply and late history for Jonas cannot overwrite Claire (1020.733596ms)
+  ✔ reload keeps unresolved operation and draft; 202 empty is never completed (736.434962ms)
+  ✔ 320/375/390 RTL long text, focus and controls stay reachable (885.248823ms)
+✔ real preview page browser acceptance (12392.257614ms)
+✔ materials UI uses the real server and recipient contexts (2180.40893ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15322.883585

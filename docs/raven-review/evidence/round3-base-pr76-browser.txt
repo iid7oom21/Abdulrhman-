@@ -1,0 +1,107 @@
+TAP version 13
+# Subtest: real preview page browser acceptance
+    # Subtest: 1 initialization preserves unrelated storage and music preferences; 2 normal path and safe text
+    ok 1 - 1 initialization preserves unrelated storage and music preferences; 2 normal path and safe text
+      ---
+      duration_ms: 355.050708
+      type: 'test'
+      ...
+    # Subtest: unreadable owned journal is preserved verbatim
+    ok 2 - unreadable owned journal is preserved verbatim
+      ---
+      duration_ms: 216.888366
+      type: 'test'
+      ...
+    # Subtest: prior preview journal with refused metadata restores its response and draft
+    ok 3 - prior preview journal with refused metadata restores its response and draft
+      ---
+      duration_ms: 188.300215
+      type: 'test'
+      ...
+    # Subtest: valid JSON with incompatible fields or records is never overwritten on initialization
+    ok 4 - valid JSON with incompatible fields or records is never overwritten on initialization
+      ---
+      duration_ms: 751.647516
+      type: 'test'
+      ...
+    # Subtest: conflicting late history cannot replace an already received reply for the same ID
+    ok 5 - conflicting late history cannot replace an already received reply for the same ID
+      ---
+      duration_ms: 353.778681
+      type: 'test'
+      ...
+    # Subtest: 3 new browser session has no old history, and labels state the limits
+    ok 6 - 3 new browser session has no old history, and labels state the limits
+      ---
+      duration_ms: 140.676942
+      type: 'test'
+      ...
+    # Subtest: 4 server error then poll stays error; 10 repeated reads do not duplicate
+    ok 7 - 4 server error then poll stays error; 10 repeated reads do not duplicate
+      ---
+      duration_ms: 409.365186
+      type: 'test'
+      ...
+    # Subtest: 5 history keeps pending; 6 second send blocked; 9 character switch; 11 stop retains ID
+    ok 8 - 5 history keeps pending; 6 second send blocked; 9 character switch; 11 stop retains ID
+      ---
+      duration_ms: 477.182078
+      type: 'test'
+      ...
+    # Subtest: 7 known reply without save confirmation stays visible; no regeneration; 13 reply XSS is text
+    ok 9 - 7 known reply without save confirmation stays visible; no regeneration; 13 reply XSS is text
+      ---
+      duration_ms: 339.926745
+      type: 'test'
+      ...
+    # Subtest: 7b local save throws after a known reply, reply stays in memory
+    ok 10 - 7b local save throws after a known reply, reply stays in memory
+      ---
+      duration_ms: 215.056813
+      type: 'test'
+      ...
+    # Subtest: 8 stale history after send; 9 late character history never changes selected conversation
+    ok 11 - 8 stale history after send; 9 late character history never changes selected conversation
+      ---
+      duration_ms: 327.769132
+      type: 'test'
+      ...
+    # Subtest: late reply and late history for Jonas cannot overwrite Claire
+    ok 12 - late reply and late history for Jonas cannot overwrite Claire
+      ---
+      duration_ms: 557.899772
+      type: 'test'
+      ...
+    # Subtest: reload keeps unresolved operation and draft; 202 empty is never completed
+    ok 13 - reload keeps unresolved operation and draft; 202 empty is never completed
+      ---
+      duration_ms: 293.78452
+      type: 'test'
+      ...
+    # Subtest: 320/375/390 RTL long text, focus and controls stay reachable
+    ok 14 - 320/375/390 RTL long text, focus and controls stay reachable
+      ---
+      duration_ms: 452.190519
+      type: 'test'
+      ...
+    1..14
+ok 1 - real preview page browser acceptance
+  ---
+  duration_ms: 5239.357863
+  type: 'test'
+  ...
+# Subtest: materials UI uses the real server and recipient contexts
+ok 2 - materials UI uses the real server and recipient contexts
+  ---
+  duration_ms: 1756.316428
+  type: 'test'
+  ...
+1..2
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5649.272265

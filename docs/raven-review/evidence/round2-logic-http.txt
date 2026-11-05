@@ -1,0 +1,31 @@
+
+> raven-ai-dialogue-preview@0.1.0 test
+> node --test tests/*.test.js
+
+✔ same operation replays, a different payload conflicts even when its prefix matches (2.074582ms)
+✔ owner required, read/poll never generates and cannot cross owners (0.28128ms)
+✔ no recovered transcript means no invented presence or testimony (0.804955ms)
+✔ client facts/corrections/motives/report cannot grant character knowledge (0.301777ms)
+✔ unknown character/types are validation errors (0.165833ms)
+✔ real session routes share only explicit materials and build dialogue from recipient knowledge (118.517809ms)
+✔ private correction reaches only its explicit recipient and original statement remains intact (3.048991ms)
+✔ sharing correction does not share motive, private note, previous conversation or unseen original (0.536463ms)
+✔ report shares its explicit attachments only; receipt alone never shares report (0.635305ms)
+✔ delivery to Matteo does not tell Jonas; forwarded material exposes no transport sender/recipient list (1.596524ms)
+✔ older correction delivered later never overrides newer known correction; silence does not remove either (0.358822ms)
+✔ evidence derivatives share a source group without leaking an unseen private source ID (0.338003ms)
+✔ report attachments do not expand nested report links or correction originals (0.652797ms)
+✔ stable IDs replay exactly, conflict on changed payload, and forbid duplicate recipients or attachments (0.323965ms)
+✔ immutable records reject unknown fields, unknown actors, foreign corrections and unauthorized forwarding atomically (1.022964ms)
+✔ each factory is a separate session and commands embedded in text do not change game state (3.637683ms)
+✔ player-visible view does not leak private NPC text or an unseen newer correction (0.407426ms)
+✔ HTTP sessions, concurrent idempotency, validation, private history and read-only polling (83.483233ms)
+✔ chunked HTTP preserves Unicode across a split UTF-8 character and replays the same operation (117.931231ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 641.317189

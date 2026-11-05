@@ -1,0 +1,7 @@
+{
+  "name": "raven-terminal-preview-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {"test": "playwright test -c playwright.config.mjs"},
+  "devDependencies": {"@playwright/test": "^1.51.0"}
+}
