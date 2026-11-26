@@ -42,16 +42,18 @@ Current release token: `abc27e4aad89ec10`.
 
 ## Tests
 
-The remaining Playwright specs (opening, episodes, audio, shell, performance, release loading) run against a separately served copy:
+Run the Chromium suite from a clean checkout with Node.js 24:
 
 ```sh
 cd raven/terminal-preview/tests
-npm install
-npx playwright install chromium
+npm ci
+npx playwright install --with-deps chromium
 npm test
 ```
 
-`RAVEN_PREVIEW_URL`, `RAVEN_BROWSER`, `RAVEN_TEST_OUTPUT` and `RAVEN_TEST_REPORT` work as before.
+Playwright starts the repository server on port 8786 and waits for the preview. Set `RAVEN_PREVIEW_URL` (including the trailing slash) to test an already served copy instead. `RAVEN_BROWSER`, `RAVEN_TEST_OUTPUT` and `RAVEN_TEST_REPORT` still work.
+
+GitHub Actions runs all `*.spec.mjs` on every push and pull request. The opening-film tests decode the real video: when it is absent from Git, CI downloads it once from the application's media origin and verifies its SHA-256 before starting the browser. On failure, download `playwright-diagnostics` from the run for the JSON report, screenshots and traces.
 
 ## State
 

@@ -1,7 +1,16 @@
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const { defineConfig } = require(process.env.PLAYWRIGHT_TEST_MODULE || '@playwright/test');
+const localURL = 'http://127.0.0.1:8786/raven/terminal-preview/';
 export default defineConfig({
+  forbidOnly: Boolean(process.env.CI),
+  webServer: process.env.RAVEN_PREVIEW_URL ? undefined : {
+    command: 'node server.ts',
+    cwd: import.meta.dirname + '/../../..',
+    env: { PORT: '8786' },
+    url: localURL,
+    reuseExistingServer: !process.env.CI,
+  },
   testDir: '.',
   testMatch: '*.spec.mjs',
   timeout: 45000,
@@ -12,7 +21,7 @@ export default defineConfig({
   outputDir: process.env.RAVEN_TEST_OUTPUT || '/tmp/raven-terminal-test-results',
   reporter: [['list'], ['json', { outputFile: process.env.RAVEN_TEST_REPORT || '/tmp/raven-terminal-test-report.json' }]],
   use: {
-    baseURL: process.env.RAVEN_PREVIEW_URL || 'http://127.0.0.1:8786/raven/terminal-preview/',
+    baseURL: process.env.RAVEN_PREVIEW_URL || localURL,
     browserName: process.env.RAVEN_BROWSER || 'chromium',
     viewport: { width: 1440, height: 1000 },
     contextOptions: { reducedMotion: 'reduce' },
