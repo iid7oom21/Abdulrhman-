@@ -1,0 +1,82 @@
+/* The drawing and hit layer share the camera's coordinate system, even in RTL. */
+.shot {
+  --camera-width: 900;
+  --camera-height: 530;
+  position: relative;
+  isolation: isolate;
+  direction: ltr;
+  aspect-ratio: var(--camera-width) / var(--camera-height);
+  background: #202729;
+}
+.shot-art, .shot-targets { position: absolute; inset: 0; width: 100%; height: 100%; }
+.shot-art { display: block; pointer-events: none; }
+.shot-targets { pointer-events: none; }
+
+.shot[data-curtain="off"] .curtain-open,
+.shot[data-curtain="on"] .curtain-closed,
+.shot[data-lamp="off"] .lamp-on,
+.shot[data-lamp="on"] .lamp-off,
+.shot[data-drawer="off"] .drawer-open,
+.shot[data-drawer="on"] .drawer-closed { display: none; }
+
+/* Centre and size of each object in the original 900 × 530 shot. */
+.hotspot[data-prop="curtain"] { --cx: 328; --cy: 176; --w: 294; --h: 208; }
+.hotspot[data-prop="lamp"] { --cx: 715; --cy: 270; --w: 118; --h: 144; }
+.hotspot[data-prop="drawer"] { --cx: 720; --cy: 418; --w: 220; --h: 106; }
+.hotspot {
+  position: absolute;
+  left: calc(100% * var(--cx) / var(--camera-width));
+  top: calc(100% * var(--cy) / var(--camera-height));
+  width: max(44px, calc(100% * var(--w) / var(--camera-width)));
+  height: max(44px, calc(100% * var(--h) / var(--camera-height)));
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: start end;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  touch-action: manipulation;
+  pointer-events: auto;
+}
+.hotspot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px dashed var(--brass);
+  background: rgb(229 186 126 / 6%);
+  opacity: 0;
+  pointer-events: none;
+}
+.hotspot:focus-visible::before { opacity: 1; }
+@media (hover: hover) {
+  .hotspot:enabled:hover::before { opacity: 1; }
+}
+.hotspot-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .12rem .45rem;
+  border: 1px solid var(--brass);
+  border-radius: 2px;
+  background: #13191b;
+  color: var(--ink);
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.hotspot-badge bdi { color: var(--brass); font-size: .75rem; }
+.hotspot-name { font-size: .85rem; }
+.hotspot[aria-pressed="true"] .hotspot-badge { border-style: double; border-width: 3px; background: #f0ce99; color: #201b15; }
+.hotspot[aria-pressed="true"] bdi { color: inherit; }
+.hotspot[data-prop="curtain"] { place-items: start; }
+/* Label the lamp above its narrow shade; both the label and the lamp are clickable. */
+.hotspot[data-prop="lamp"] .hotspot-badge { transform: translateY(-100%); pointer-events: auto; }
+.hotspot[data-prop="drawer"] { place-items: end; }
+@media (max-width: 520px) {
+  /* Keep clues visible; only the pin shrinks, never the touch target. */
+  .hotspot-name { display: none; }
+}

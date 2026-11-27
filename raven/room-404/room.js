@@ -18,7 +18,10 @@ function render() {
   reset.disabled = scene.frame === 1;
   for (const button of controls) {
     const prop = button.dataset.prop;
-    sceneView.dataset[prop] = scene[prop] ? 'on' : 'off';
+    const mode = scene[prop] ? 'on' : 'off';
+    sceneView.dataset[prop] = mode;
+    const readout = document.getElementById(`${prop}-state`);
+    readout.textContent = readout.dataset[mode];
     button.setAttribute('aria-pressed', String(scene[prop]));
     button.disabled = false;
   }

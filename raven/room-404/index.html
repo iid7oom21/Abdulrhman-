@@ -8,6 +8,7 @@
   <title>الغرفة 404 | RAVEN</title>
   <link rel="icon" href="../../fourth-signature/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./room.css">
+  <link rel="stylesheet" href="./shot.css">
   <script type="module" src="./room.js"></script>
 </head>
 <body>
@@ -30,8 +31,10 @@
           <span><span class="indicator" aria-hidden="true"></span> اللقطة <bdi id="frame">01</bdi></span>
           <span class="code" dir="ltr">ROOM 404 · CAM A</span>
         </figcaption>
-        <div id="scene" data-curtain="off" data-lamp="off" data-drawer="off">
-          <svg viewBox="0 0 900 530" aria-hidden="true">
+        <div id="scene" class="shot" data-curtain="off" data-lamp="off" data-drawer="off">
+          <svg class="shot-art" viewBox="0 0 900 530" role="img" aria-labelledby="shot-title" aria-describedby="shot-description" focusable="false">
+            <title id="shot-title">الغرفة 404 من زاوية الكاميرا الثابتة</title>
+            <desc id="shot-description">على اليسار نافذة بستارة خلف السرير، وعلى اليمين مصباح فوق منضدة بدرج.</desc>
             <defs>
               <linearGradient id="wall" x2=".95" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#3b4849"/><stop offset="1" stop-color="#202729"/></linearGradient>
               <linearGradient id="floor" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#373334"/><stop offset="1" stop-color="#17191b"/></linearGradient>
@@ -101,20 +104,33 @@
             <rect x="0" y="0" width="900" height="530" fill="url(#vignette)"/>
             <path d="M25 73V25h48m754 0h48v48M25 457v48h48m802-48v48h-48" fill="none" stroke="#d3c1a1" stroke-opacity=".45" stroke-width="2"/>
           </svg>
-          <button class="hotspot" data-prop="curtain" type="button" aria-label="الستارة" aria-pressed="false" disabled><span aria-hidden="true">01</span><span class="hotspot-name" aria-hidden="true">الستارة</span></button>
-          <button class="hotspot" data-prop="lamp" type="button" aria-label="المصباح" aria-pressed="false" disabled><span aria-hidden="true">02</span><span class="hotspot-name" aria-hidden="true">المصباح</span></button>
-          <button class="hotspot" data-prop="drawer" type="button" aria-label="الدرج" aria-pressed="false" disabled><span aria-hidden="true">03</span><span class="hotspot-name" aria-hidden="true">الدرج</span></button>
+          <div class="shot-targets" role="group" aria-label="العناصر التفاعلية في اللقطة">
+            <button class="hotspot" data-prop="curtain" type="button" aria-label="الستارة" aria-describedby="curtain-state" aria-pressed="false" disabled>
+              <span class="hotspot-badge" dir="rtl" aria-hidden="true"><bdi>01</bdi><span class="hotspot-name">الستارة</span></span>
+            </button>
+            <button class="hotspot" data-prop="lamp" type="button" aria-label="المصباح" aria-describedby="lamp-state" aria-pressed="false" disabled>
+              <span class="hotspot-badge" dir="rtl" aria-hidden="true"><bdi>02</bdi><span class="hotspot-name">المصباح</span></span>
+            </button>
+            <button class="hotspot" data-prop="drawer" type="button" aria-label="الدرج" aria-describedby="drawer-state" aria-pressed="false" disabled>
+              <span class="hotspot-badge" dir="rtl" aria-hidden="true"><bdi>03</bdi><span class="hotspot-name">الدرج</span></span>
+            </button>
+          </div>
+        </div>
+        <div class="shot-note">
+          <span class="eyebrow">ما الذي تغيّر؟</span>
+          <p id="scene-status" role="status" aria-atomic="true">الستارة مغلقة، المصباح مطفأ، والدرج مغلق.</p>
         </div>
       </figure>
 
       <section class="field-note" aria-labelledby="note-title">
         <div>
           <p class="eyebrow">ملاحظات المراقبة</p>
-          <h2 id="note-title">ما الذي تغيّر؟</h2>
-          <p id="scene-status" role="status" aria-atomic="true">الستارة مغلقة، المصباح مطفأ، والدرج مغلق.</p>
+          <h2 id="note-title">عناصر اللقطة</h2>
         </div>
         <ol class="object-index" aria-label="الأغراض في اللقطة">
-          <li><bdi>01</bdi> الستارة</li><li><bdi>02</bdi> المصباح</li><li><bdi>03</bdi> الدرج</li>
+          <li><bdi>01</bdi> الستارة <span class="prop-state" id="curtain-state" data-off="مغلقة" data-on="مفتوحة">مغلقة</span></li>
+          <li><bdi>02</bdi> المصباح <span class="prop-state" id="lamp-state" data-off="مطفأ" data-on="مضاء">مطفأ</span></li>
+          <li><bdi>03</bdi> الدرج <span class="prop-state" id="drawer-state" data-off="مغلق" data-on="مفتوح">مغلق</span></li>
         </ol>
         <button id="reset-scene" type="button" disabled>العودة إلى اللقطة الأولى</button>
       </section>
