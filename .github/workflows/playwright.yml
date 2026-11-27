@@ -1,0 +1,61 @@
+name: Playwright and Studio layout
+on: [push, pull_request]
+permissions:
+  contents: read
+
+jobs:
+  studio-layout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24
+      - name: Build with a Raven-only input in the disposable checkout
+        run: |
+          mkdir -p dist/raven
+          (set -C; printf '// Raven layout probe\n' > dist/raven/__raven_layout_probe__.js)
+          npm run build
+      - name: Check that Studio did not receive the Raven bundle
+        run: npm run test:studio-layout
+
+  playwright:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: raven/terminal-preview/tests/package-lock.json
+      - name: Install browser tests
+        working-directory: raven/terminal-preview/tests
+        run: |
+          npm ci
+          npx --no-install playwright install --with-deps chromium
+      - name: Fetch the real opening film when it is not in the checkout
+        run: |
+          film=raven/terminal-preview/assets/raven-intro.mp4
+          if [ ! -f "$film" ]; then
+            curl --fail --location --retry 3 --max-time 90 --output "$film" "https://iid7oom21.github.io/abdulrhman/$film"
+            echo "0cabf51e035ba44a7eae444c82d5d5a1df4135d72c457045e6ede69db50dfbe3  $film" | sha256sum --check
+          fi
+      - name: Run the full Chromium suite
+        working-directory: raven/terminal-preview/tests
+        env:
+          RAVEN_TEST_OUTPUT: ${{ runner.temp }}/playwright/results
+          RAVEN_TEST_REPORT: ${{ runner.temp }}/playwright/report.json
+        run: npm test
+      - name: Save report, screenshots and traces on failure
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: playwright-diagnostics
+          path: ${{ runner.temp }}/playwright/
+          retention-days: 7
