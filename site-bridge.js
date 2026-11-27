@@ -33,19 +33,19 @@
       if (!restoringView) remember();
     });
   };
-  const replace = history.replaceState.bind(history);
-  const publicUrl = new URL(location.href);
-  publicUrl.pathname = publicUrl.pathname.replace(/content\.html$/, '');
-  replace(history.state, '', publicUrl);
+  const replaceEntry = history.replaceState.bind(history);
+  // Browser Back/Forward may refetch the child's history URL independently of
+  // the host. Store its document entry here; only the host gets the public URL.
+  const replace = (state, value) => replaceEntry(state, '', host.contentUrl?.(value) || value);
   history.pushState = (state, unused, value) => {
     const url = new URL(value || location.href, location.href);
     remember();
-    replace(state, '', url);
+    replace(state, url);
     host.childRoute(url.href, state, true);
   };
   history.replaceState = (state, unused, value) => {
     const url = new URL(value || location.href, location.href);
-    replace(state, '', url);
+    replace(state, url);
     host.childRoute(url.href, state);
   };
   window.RavenPage = {
@@ -54,7 +54,7 @@
       const id = ++restoreId;
       const previous = location.href;
       restoringView = Boolean(view);
-      replace(state, '', value);
+      replace(state, value);
       dispatchEvent(new PopStateEvent('popstate', { state }));
       if (new URL(previous).hash !== location.hash) {
         dispatchEvent(new HashChangeEvent('hashchange', { oldURL: previous, newURL: location.href }));
