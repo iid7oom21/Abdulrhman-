@@ -10,7 +10,7 @@ const loadMessage = document.querySelector('#site-load-message');
 const retry = document.querySelector('#site-retry');
 const direct = document.querySelector('#site-direct');
 const soundtrack = createSoundtrack(root);
-const routes = ['raven/'].map(path => new URL(path, root).pathname);
+const routes = ['raven/', 'raven/after-show/'].map(path => new URL(path, root).pathname);
 const pageMetadata = [
   'meta[name="description"]', 'meta[property^="og:"]', 'meta[name^="twitter:"]',
   'link[rel="canonical"]', 'link[rel="alternate"][hreflang]',
@@ -79,7 +79,8 @@ function restoreChild() {
 function show(url, childState = null, view = null, force = false, focus = false) {
   destination = { url, childState, view, focus };
   const content = new URL(url);
-  content.pathname += 'content.html';
+  // The standalone editing room can also run inside the persistent soundtrack shell.
+  content.pathname += url.pathname === routes[0] ? 'content.html' : 'index.html';
   if (contentVersion) content.searchParams.set('v', contentVersion);
   direct.href = content.href;
   if (!force && currentChild() && route(frame.contentWindow.location.href)?.pathname === url.pathname) {

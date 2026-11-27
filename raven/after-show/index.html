@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101513">
+  <meta name="description" content="لعبة مونتاج من RAVEN. ثلاث لقطات وثلاثون ثانية لاختبار شهادة من المحطة.">
+  <title>الشريط المقطوع · RAVEN</title>
+  <link rel="icon" href="../../fourth-signature/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./room.css">
+  <script src="../../site-bridge.js?v=media-handoff-1"></script>
+  <script type="module" src="./room.mjs"></script>
+</head>
+<body>
+  <div class="room">
+    <header class="mast">
+      <a class="brand" id="archive" href="../#top" aria-label="العودة إلى RAVEN">RAVEN</a>
+      <span class="mast-divider" aria-hidden="true"></span><span class="mast-label" data-en="Editing room">غرفة المونتاج</span>
+      <button class="language" id="language" type="button" lang="en">English</button>
+    </header>
+    <main>
+      <section id="briefing" aria-labelledby="case-title">
+        <div class="cover">
+          <div class="cover-copy">
+            <p class="eyebrow"><span class="splice" aria-hidden="true">//</span> <bdi>AFTER-SHOW</bdi><span class="rule"></span><span data-en="Case 01">ملف 01</span></p>
+            <h1 id="case-title" data-en="The Cut Tape">الشريط المقطوع</h1>
+            <p class="lead" data-en="The witness tells one story. Can you cut a reel that proves another?">للشاهد رواية. هل تقدر أن تثبت عكسها بثلاث لقطات؟</p>
+            <div class="deposition">
+              <p class="kicker" data-en="From the witness statement">من إفادة الشاهد</p>
+              <blockquote data-en="“After the station closed, nobody opened locker seven.”">«بعد إغلاق المحطة، ما انفتح باب الخزانة رقم سبعة.»</blockquote>
+            </div>
+            <p class="directions" data-en="All eight stills are from the same night. Their clocks are in sync. Choose three and submit before time runs out, without revealing the witness.">اللقطات الثماني من الليلة نفسها، وساعاتها متزامنة. اختر ثلاثًا واعتمد الشريط قبل انتهاء الوقت، من دون كشف هوية الشاهد.</p>
+            <button class="primary" id="start" type="button" disabled><span class="play" aria-hidden="true">▶</span><span data-en="Start editing">ابدأ المونتاج</span></button>
+            <p class="load-note" id="asset-note" role="status"></p>
+          </div>
+          <figure class="viewer">
+            <div class="viewer-rail" dir="ltr"><span><i aria-hidden="true"></i> RVN &nbsp;/&nbsp; CAM 04</span><span>STILL · 001</span></div>
+            <div class="viewglass"><img src="./briefing.svg" width="600" height="394" alt="" fetchpriority="high"></div>
+            <figcaption><strong data-en="Station locker room">مستودع الأمانات</strong><span data-en="Night shift · Station archive">المناوبة الليلية · أرشيف المحطة</span></figcaption>
+          </figure>
+        </div>
+        <div class="specs">
+          <div><b dir="ltr">08</b><span data-en="Source stills">لقطات خام</span></div>
+          <div><b dir="ltr">03</b><span data-en="Frames in your cut">لقطات في شريطك</span></div>
+          <div><b dir="ltr">00:30</b><span data-en="On the edit clock">على ساعة المونتاج</span></div>
+        </div>
+        <noscript><p>يلزم تفعيل JavaScript لتشغيل ساعة المونتاج واختيار اللقطات.</p></noscript>
+      </section>
+      <section id="editor" hidden aria-labelledby="editor-title">
+        <div class="desk-head"><div><p class="eyebrow"><span class="splice" aria-hidden="true">//</span><bdi>AFTER-SHOW / 01</bdi></p><h2 tabindex="-1" id="editor-title" data-en="The contact sheet">اللقطات الخام</h2></div>
+          <div class="clock"><span data-en="Time left">الوقت المتبقي</span><b id="time" role="timer" aria-live="off" dir="ltr">00:30</b></div>
+        </div>
+        <p class="reminder"><strong data-en="Witness:">الشاهد:</strong> <span data-en="“After the station closed, nobody opened locker seven.”">«بعد إغلاق المحطة، ما انفتح باب الخزانة رقم سبعة.»</span></p>
+        <p class="sheet-hint" data-en="Select a still to add it. Select it again to take it out.">اضغط على لقطة لإضافتها، واضغط عليها مجددًا لنزعها.</p>
+        <div class="sheet" id="sheet"></div>
+        <section class="cut-bar" aria-labelledby="cut-title">
+          <div class="cut-label"><h3 id="cut-title" data-en="Your cut">شريط المونتاج</h3><bdi id="count">0 / 3</bdi></div>
+          <ol class="slots" id="slots"></ol>
+          <button class="primary" id="submit" type="button" disabled data-en="Submit the cut">اعتمد الشريط</button>
+          <p class="cut-note" id="cut-note" role="status" aria-live="polite"></p>
+        </section>
+      </section>
+      <section id="review" hidden aria-labelledby="verdict">
+        <div class="review-head"><div><p class="eyebrow"><span class="splice" aria-hidden="true">//</span><span data-en="After the cut · Case 01">بعد المونتاج · ملف 01</span></p><h2 id="verdict" tabindex="-1"></h2><p class="review-copy" id="verdict-copy"></p></div>
+          <button class="primary" id="retry" type="button" data-en="Edit again">أعد المونتاج</button></div>
+        <h3 class="section-label" data-en="Your final strip">نسختك من الشريط</h3><div id="final-strip" class="final-strip"></div>
+        <h3 class="section-label" data-en="How the evidence fits">كيف يكتمل الدليل؟</h3><ul class="proofs" id="proofs"></ul>
+      </section>
+    </main>
+    <footer><span dir="ltr">RVN &nbsp;/&nbsp; EDIT SUITE</span><span data-en="Interactive storyboard · Prototype">تجربة مونتاج · نسخة أولية</span></footer>
+  </div>
+</body>
+</html>

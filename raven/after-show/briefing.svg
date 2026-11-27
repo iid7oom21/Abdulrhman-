@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="394" viewBox="0 0 600 394">
+  <!-- Original illustrated location plate. No portrait or witness footage exists. -->
+  <defs>
+    <linearGradient id="wall" x2=".8" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#151e20"/><stop offset=".54" stop-color="#56615a"/><stop offset="1" stop-color="#202b29"/></linearGradient>
+    <linearGradient id="floor" x2="0" y2="1"><stop stop-color="#25302f"/><stop offset=".55" stop-color="#4e5041"/><stop offset="1" stop-color="#171f21"/></linearGradient>
+    <linearGradient id="steel"><stop stop-color="#58645b"/><stop offset=".43" stop-color="#818372"/><stop offset="1" stop-color="#505f55"/></linearGradient>
+    <linearGradient id="lamp" x2=".5" y2="1"><stop stop-color="#f0d697" stop-opacity=".34"/><stop offset="1" stop-color="#f5d18a" stop-opacity="0"/></linearGradient>
+    <radialGradient id="shade" cx=".61" cy=".4" r=".75"><stop offset=".32" stop-color="#081215" stop-opacity="0"/><stop offset="1" stop-color="#061013" stop-opacity=".86"/></radialGradient>
+    <pattern id="grain" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 0h1M2 2h1" stroke="#e5d6aa" stroke-opacity=".1" stroke-width=".7"/></pattern>
+    <pattern id="vents" width="23" height="5" patternUnits="userSpaceOnUse"><path d="M1 2h21" stroke="#222d29" stroke-width="2"/></pattern>
+    <g id="locker"><path d="M0 0h79v210H0z" fill="url(#steel)" stroke="#26322d" stroke-width="3"/><path d="M4 205V4h70" fill="none" stroke="#a5a38b" opacity=".65"/><path d="M19 35h42v20H19zM18 175h43v14H18z" fill="url(#vents)"/><rect x="25" y="12" width="29" height="12" rx="1" fill="#303d36"/><path d="M12 86v26" stroke="#27322b" stroke-width="8"/><path d="M10 87v23" stroke="#c4b99a" stroke-width="3"/><circle cx="12" cy="121" r="3.5" fill="#b4a681"/></g>
+  </defs>
+  <path fill="url(#wall)" d="M0 0h600v394H0z"/>
+  <path d="M0 0h600v20L141 119H0z" fill="#192426"/><path d="m0 6 143 107L557 0M26 0l126 101M262 0l-95 102" fill="none" stroke="#47504a" stroke-width="3"/>
+  <path d="M0 260 145 191 600 251v143H0z" fill="url(#floor)"/>
+  <g stroke="#a29c7b" opacity=".36" fill="none"><path d="M133 191 0 338m143-145L69 394m82-200 71 200m-62-198 234 198m-220-195 426 161M0 286l600 71M43 249l557 55M94 221l506 46"/></g>
+  <path d="M0 78 92 119v89L0 266z" fill="#24312f"/><path d="m11 108 41 14v87l-41 20z" fill="#0f1e21" stroke="#626859" stroke-width="4"/><path d="m18 124 27 9v41l-27 6z" fill="#59706a"/><path d="m56 126 26 7v54l-26 13z" fill="#394a46"/><path d="M93 119h64v76l-64 14z" fill="#566158"/><path d="M105 141h33v55h-33z" fill="#1b2c2c"/><path d="M109 145h25v26h-25z" fill="#798675"/>
+  <path d="m148 119 452-98v256l-452-75z" fill="#34433c"/><path d="m148 127 452-89v25l-452 75z" fill="#a09b7a" opacity=".37"/>
+  <!-- Staggered rows conserve depth while keeping the near locker hardware legible. -->
+  <g transform="matrix(.27,-.040,0,.33,150,132)"><use href="#locker"/><use href="#locker" x="81"/></g>
+  <g transform="matrix(.43,-.073,0,.44,195,125)"><use href="#locker"/><use href="#locker" x="81"/></g>
+  <g transform="matrix(.64,-.105,0,.59,266,114)"><use href="#locker"/><use href="#locker" x="81"/></g>
+  <g transform="matrix(.95,-.15,0,.83,371,97)"><use href="#locker"/><use href="#locker" x="81"/></g>
+  <g transform="matrix(1.24,-.22,0,1.04,525,72)"><use href="#locker"/></g>
+  <g fill="#d4d2ab" font-family="monospace" font-weight="bold"><text transform="matrix(.93,-.15,0,.8,397,110)" font-size="11">04</text><text transform="matrix(.93,-.15,0,.8,474,98)" font-size="11">05</text><text transform="matrix(1.18,-.21,0,1.03,561,88)" font-size="11">06</text></g>
+  <path d="m201 84 204-53 14 7-211 55z" fill="#1c2523"/><path d="m213 87 188-49 5 2-189 51z" fill="#f7e8b8"/><path d="m213 91 193-51 194 202-387 64-85-78z" fill="url(#lamp)"/>
+  <path d="m161 205 439 73v9l-440-78z" fill="#202a27"/>
+  <g><path d="m32 302 147-62 22 5-149 69z" fill="#877355" stroke="#2b3029" stroke-width="3"/><path d="m51 315 151-69v8L53 323z" fill="#3a342a"/><path d="m55 319 4 36 11-5-3-37m105-52 2 26 7-3-1-27" fill="#202b29"/><path d="m30 300 2-36 9-4 1 35m125-53v-22l8-4v22" fill="#2c3830"/><path d="m25 266 151-60v13L26 282z" fill="#79694f" stroke="#30372f" stroke-width="2"/></g>
+  <path d="M0 0h600v394H0z" fill="url(#shade)"/><path d="M0 0h600v394H0z" fill="url(#grain)"/>
+  <g fill="none" stroke="#e2d4ab" stroke-width="1.5" opacity=".75"><path d="M19 43V20h24m514 0h24v23M19 352v23h24m514 0h24v-23"/></g>
+</svg>
