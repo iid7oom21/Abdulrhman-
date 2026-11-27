@@ -141,6 +141,12 @@ ok 2 - ثانيًا وثالثًا: اختبارات الوحدة المصلحة
 
 ---
 
+## فحص TypeScript للخادم
+
+باستخدام Node.js 24، شغّل `npm ci` من جذر المستودع، ثم `npm run typecheck`. تبدأ المرحلة الأولى بـ`server.ts` فقط: يُفعّل `strict` من دون توليد ملفات JavaScript، ويبقى أمر تشغيل الخادم `node server.ts` كما هو.
+
+تبقى وحدات JavaScript التي يستوردها الخادم خارج الفحص الصارم. لتوسيع النطاق تدريجيًا، أضف ملف TypeScript التالي إلى قائمة `files` في `tsconfig.json` ثم أعد الفحص.
+
 ## فحوص GitHub Actions
 
 مع كل `push` و`pull_request` يعمل فحصان مستقلان: [اختبارات المتصفح Playwright وطريقة تشغيلها محليًا](raven/terminal-preview/README.md#tests)، وفحص يمنع نسخ حزمة `dist/raven/` إلى `studio/` أو `dist/studio/`، سواء نُسخ المجلد نفسه أم محتواه مباشرةً.

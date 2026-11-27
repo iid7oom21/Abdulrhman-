@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT) || 3000;
 const REMOTE_ASSET_BASE = 'https://iid7oom21.github.io/abdulrhman';
 
-const MIME_TYPES = {
+const MIME_TYPES: Record<string, string | undefined> = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.mjs': 'text/javascript; charset=utf-8',
@@ -32,17 +32,17 @@ const MIME_TYPES = {
 // Create the AI Dialogue Preview server handler from server/ai-dialogue
 const dialogueServer = createPreviewServer();
 
-function delegateToDialogueServer(req, res, overrideUrl) {
+function delegateToDialogueServer(req: http.IncomingMessage, res: http.ServerResponse, overrideUrl: string) {
   if (overrideUrl) {
     req.url = overrideUrl;
   }
   dialogueServer.emit('request', req, res);
 }
 
-async function proxyRemoteAsset(req, res, cleanPathname) {
+async function proxyRemoteAsset(req: http.IncomingMessage, res: http.ServerResponse, cleanPathname: string) {
   const remoteUrl = `${REMOTE_ASSET_BASE}${cleanPathname}`;
   try {
-    const headers = {};
+    const headers: Record<string, string> = {};
     if (req.headers.range) {
       headers.Range = req.headers.range;
     }
@@ -54,7 +54,7 @@ async function proxyRemoteAsset(req, res, cleanPathname) {
     }
 
     const ext = path.extname(cleanPathname).toLowerCase();
-    const responseHeaders = {
+    const responseHeaders: http.OutgoingHttpHeaders = {
       'Content-Type': upstream.headers.get('content-type') || MIME_TYPES[ext] || 'application/octet-stream',
       'Accept-Ranges': 'bytes',
       'Cache-Control': 'public, max-age=3600'
