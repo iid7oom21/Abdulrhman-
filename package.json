@@ -8,6 +8,10 @@
     "start": "node server.ts",
     "build": "npm test && node --test server/ai-dialogue/tests/*.test.js",
     "lint": "node --check player-controller.mjs && node --check player-controller.test.mjs && node --check server.ts",
-    "test": "node --test player-controller.test.mjs tests/after-show.test.mjs"
+    "test": "node --test player-controller.test.mjs tests/after-show.test.mjs",
+    "test:homepage": "playwright test homepage-arabic.spec.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.0"
   }
 }
