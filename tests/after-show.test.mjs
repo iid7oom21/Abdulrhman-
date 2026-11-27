@@ -20,6 +20,45 @@ test('the briefing consumes no time; only three distinct valid frames fit, with 
   assert.deepEqual(round.read().selected, [5, 1, 4]);
 });
 
+test('the third proof shot enables submission but only submitting wins the round', () => {
+  const { round } = fixture();
+  round.start();
+  round.toggle(9);
+  assert.deepEqual(round.read().selected, []);
+
+  for (const nextShot of [5, 1, 3]) {
+    assert.equal(round.read().canSubmit, false);
+    round.submit();
+    assert.equal(round.read().phase, 'editing');
+    round.toggle(nextShot);
+  }
+
+  const cut = round.read();
+  assert.deepEqual(cut.selected, [5, 1, 3]);
+  assert.equal(cut.phase, 'editing');
+  assert.equal(cut.canSubmit, true);
+  round.submit();
+  assert.equal(round.read().phase, 'proved');
+});
+
+test('replacing a proof shot judges the final cut, not the earlier winning selection', () => {
+  const { round } = fixture();
+  round.start();
+  [1, 3, 5].forEach(round.toggle);
+  round.toggle(5);
+  assert.equal(round.read().canSubmit, false);
+  round.submit();
+  assert.equal(round.read().phase, 'editing');
+
+  round.toggle(2);
+  round.toggle(5); // A fourth shot cannot displace one of the three selected.
+  const cut = round.read();
+  assert.deepEqual(cut.selected, [1, 3, 2]);
+  assert.equal(cut.canSubmit, true);
+  round.submit();
+  assert.equal(round.read().phase, 'incomplete');
+});
+
 test('all ordered edits: 1/3/5 prove the lie, other safe cuts fail, protected cuts stay editable', () => {
   assert.deepEqual(shots.map(s => s.id), [1, 2, 3, 4, 5, 6, 7, 8]);
   for (const a of shots) for (const b of shots) for (const c of shots) {
