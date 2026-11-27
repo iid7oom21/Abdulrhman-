@@ -6,8 +6,9 @@
   const valid = value => value === 'en' || value === 'ar';
   const pages = new Set(['/', '/case', '/watch', '/privacy', '/404']);
   const homepage = new URL('../', document.currentScript.src).pathname;
-  // Handoff v2: the former /case route now resolves to the homepage.
-  const casePath = homepage;
+  const switcherSelector = 'a[data-raven-language], a[data-rvn-lang], a[data-case-language]';
+  const linkLocale = link => link.dataset.ravenLanguage || link.dataset.rvnLang || link.dataset.caseLanguage;
+  const currentPath = () => location.pathname + location.search + location.hash;
   const originalOrigin = 'https://project25762.websitepublisher.ai';
   const publicPath = path => path.replace(/(?:index|content)\.html$/, '').replace(/\/?$/, '/');
   function pagePath(path) {
@@ -26,14 +27,10 @@
     // Forms stay on their original host, including when their link is translated.
     if (url.origin === originalOrigin && url.hash === '#raven-collaborate') return path;
     const page = pagePath(url.pathname);
-    if (page === '/case' || publicPath(url.pathname) === casePath) {
-      url.pathname = casePath;
-      url.searchParams.delete('lang');
-      return url.pathname + url.search + url.hash;
-    }
-    if (page === '/' || publicPath(url.pathname) === homepage) {
+    // The retired case route still redirects to the Arabic homepage.
+    if (page === '/case' || page === '/' || publicPath(url.pathname) === homepage) {
       url.pathname = homepage;
-      if (chosen === 'en') url.searchParams.set('lang', 'en');
+      if (page !== '/case' && chosen === 'en') url.searchParams.set('lang', 'en');
       else url.searchParams.delete('lang');
       return url.pathname + url.search + url.hash;
     }
@@ -48,7 +45,7 @@
     const legacy = url.searchParams.get('lang');
     if (valid(legacy)) return legacy;
     if (/^\/en(?:\.html|\/|$)/.test(url.pathname)) return 'en';
-    if (pages.has(pagePath(url.pathname)) || [homepage, casePath].includes(publicPath(url.pathname))) return 'ar';
+    if (pages.has(pagePath(url.pathname)) || publicPath(url.pathname) === homepage) return 'ar';
     return valid(root.dataset.ravenLocale) ? root.dataset.ravenLocale : 'ar';
   }
   let current = fromUrl();
@@ -80,12 +77,15 @@
     });
   }
   function updateLinks() {
+    const path = currentPath();
     document.querySelectorAll('a[href]').forEach(link => {
-      const locale = link.dataset.ravenLanguage || link.dataset.rvnLang || link.dataset.caseLanguage;
+      const locale = linkLocale(link);
       if (valid(locale)) {
-        link.href = route(location.pathname + location.search + location.hash, locale);
+        link.href = route(path, locale);
         link.setAttribute('hreflang', locale);
         link.setAttribute('aria-label', locale === 'en' ? 'Read in English' : 'اقرأ بالعربية');
+        if (locale === current) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
         return;
       }
       const original = link.dataset.ravenRoute || link.dataset.rvnRoute || link.getAttribute('href');
@@ -107,7 +107,9 @@
     root.dataset.ravenLocale = locale;
     try { localStorage.setItem('raven_language', locale); } catch (_) {}
     if (updateUrl) {
-      history.replaceState(history.state, '', route(location.pathname + location.search + location.hash, locale));
+      const path = currentPath();
+      const target = route(path, locale);
+      if (target !== path) history.replaceState(history.state, '', target);
     }
     updateHead();
     updateLinks();
@@ -123,10 +125,12 @@
     subscribe(callback) { subscribers.add(callback); return () => subscribers.delete(callback); }
   };
   document.addEventListener('click', event => {
-    const link = event.target.closest?.('a[data-raven-language]');
+    const link = event.target.closest?.(switcherSelector);
     if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.altKey || event.shiftKey) return;
+    const locale = linkLocale(link);
+    if (!valid(locale)) return;
     event.preventDefault();
-    apply(link.dataset.ravenLanguage, true);
+    apply(locale, true);
   });
   window.addEventListener('popstate', () => apply(fromUrl(), false));
   apply(current, new URL(location.href).searchParams.has('lang'));
