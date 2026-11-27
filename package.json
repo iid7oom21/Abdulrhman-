@@ -8,6 +8,6 @@
     "start": "node server.ts",
     "build": "node --test player-controller.test.mjs && node --test server/ai-dialogue/tests/*.test.js",
     "lint": "node --check player-controller.mjs && node --check player-controller.test.mjs && node --check server.ts",
-    "test": "node --test player-controller.test.mjs"
+    "test": "node --test player-controller.test.mjs tests/room-404.test.mjs"
   }
 }
