@@ -206,7 +206,7 @@ node --test server/ai-dialogue/tests/browser.cjs server/ai-dialogue/tests/materi
 
 ### ملاحظات على الصفحة الرئيسية (لم تُعدل في هذا الفرع)
 
-فُحص `https://iid7oom21.github.io/abdulrhman/raven/` (مطابق لـ`gh-pages`) على 1440/1366/390/360. لا أخطاء JavaScript ولا تمرير أفقي.
+فُحصت صفحة `gh-pages` على مسارها وقت المراجعة (`/abdulrhman/raven/`) على 1440/1366/390/360. لا أخطاء JavaScript ولا تمرير أفقي. للتهجئة الحالية في بيانات الصفحة، راجع [دليل المشروع](../../README.md#تهجئة-مسار-الموقع).
 - `.eyebrow` في `raven/assets/raven-homepage-v6.css` يفرض `direction:ltr` حتى في العربية.
   النتيجة: العناوين الصغيرة فوق الأقسام تنحاز يسارًا أو للوسط، ويظهر «أعمال RAVEN الأصلية» بترتيب كلمات مقلوب.
 - زر «افتح نموذج التواصل» (`a.btn.primary`) بلا أي CSS لـ`.btn`، فيظهر نصًا داخل مربع فارغ لا يشبه زرًا.

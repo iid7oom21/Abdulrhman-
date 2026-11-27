@@ -1,6 +1,6 @@
 # RAVEN terminal preview
 
-> Handoff v2 (2026-11-01): the Case 017 investigation (the expanded «التوقيع الرابع») was removed from this copy: its route, data, tools, cloud backend, media tooling and tests. No story replaces it. `/case-017/` now redirects to this preview's home.
+> Handoff v2 (2026-11-01): the Case 017 investigation (the expanded «التوقيع الرابع») was removed from this copy: its route, data, tools, cloud backend, media tooling and tests. No story replaces it. Use the preview homepage rather than the removed `/case-017/` route.
 
 An isolated HTML/CSS/JavaScript preview for the cinematic RAVEN entrance: homepage, the two RAVEN 17 films and the Zarqa Al-Yamama teaser. Its pages are `noindex`.
 
@@ -10,14 +10,15 @@ The supplied 12-second RAVEN film plays once when a visitor opens the preview ho
 
 ## Routes
 
+These paths omit the `/raven/terminal-preview` prefix:
+
 | Route | Purpose |
 | --- | --- |
 | `/` | Cinematic homepage and film cards |
 | `/raven-17/` | Series overview and two parts |
-| `/raven-17/part-1/`, `/part-2/` | Individual film with resume and watched state |
+| `/raven-17/part-1/`, `/raven-17/part-2/` | Individual film with resume and watched state |
 | `/raven-17/part-3/` | Legacy alias to Part Two |
 | `/zarqa/` | Upcoming film and existing teaser |
-| `/case-017/` | Redirect to `/` (story removed) |
 
 ## Run locally
 
